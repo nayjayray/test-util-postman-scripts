@@ -1,0 +1,42 @@
+{
+    "success": true,
+    "data": {
+        "record": {
+            "customer_id": "666abfac77f39fd6c395fa34",
+            "business_id": "666671682c96c7db13ed91da",
+            "organization_id": "65c331b80fcfd2970d626d6f",
+            "record_number": "INV-210624-001",
+            "description": "tables.",
+            "status": "draft",
+            "date": {
+                "issue_date": "2024-06-20T16:00:00.000Z",
+                "due_date": "2024-07-20T16:00:00.000Z",
+                "converted_at": null
+            },
+            "amount": {
+                "total_amount": 300,
+                "previous_payment_amount": 3,
+                "processable_value": 297,
+                "amount_due": 297
+            },
+            "charges": {
+                "interest_rate_config": {
+                    "interest_rate": 19,
+                    "interest_rate_type": "abs",
+                    "daily_rate": 0.63
+                },
+                "daily_interest": {
+                    "total_interest": 0
+                }
+            },
+            "currency": "MYR",
+            "_id": "66757af4e58b313562fc050a",
+            "payment_request_history": [],
+            "created_at": "2024-06-21T13:07:00.292Z",
+            "updated_at": "2024-06-21T13:07:00.292Z",
+            "__v": 0,
+            "id": "66757af4e58b313562fc050a"
+        },
+        "presignedUploadUrl": "https://ara-app-attachment-dev.s3.ap-southeast-1.amazonaws.com/record/66757af4e58b313562fc050a/files/user_uploaded_record?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA4MTWI6D3P3A5TK5D%2F20240621%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240621T130700Z&X-Amz-Expires=3600&X-Amz-Signature=67857aa900ac3c8acb0f61e5b34f614a1bfdffc5a6bb2023b5e7091000d7c5c8&X-Amz-SignedHeaders=host&x-id=PutObject"
+    }
+}

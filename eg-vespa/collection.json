@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "75f887b6-c188-433d-9323-b6597e840757",
+		"name": "collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13782757",
+		"_collection_link": "https://ara-research-tech.postman.co/workspace/Ara~8b87c58a-d3a5-41e0-81ed-2e89c33cb852/collection/13782757-75f887b6-c188-433d-9323-b6597e840757?action=share&source=collection_link&creator=13782757"
+	},
+	"item": [
+		{
+			"name": "Chain tests",
+			"item": [
+				{
+					"name": "Create Draft Record",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"customer_id\", \"666abfac77f39fd6c395fa34\");",
+									"pm.variables.set(\"record_number\", \"INV-280624-001\");",
+									"pm.variables.set(\"description\", \"berries\");",
+									"pm.variables.set(\"issue_date\", \"2024-01-22T18:30:00.000Z\");",
+									"pm.variables.set(\"due_date\", \"2024-02-22T18:30:00.000Z\");",
+									"pm.variables.set(\"total_amount\", 100);",
+									"pm.variables.set(\"previous_payment_amount\", 5);",
+									"pm.variables.set(\"interest_rate\", 10);",
+									"pm.variables.set(\"interest_rate_type\", \"abs\");",
+									"pm.variables.set(\"is_user_uploaded_record\", false);",
+									"pm.variables.set(\"business_id\", \"666671682c96c7db13ed91da\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// check if the response status code is 200",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// parse the response body as JSON",
+									"var responseBody = pm.response.json();",
+									"",
+									"// check if the 'success' property is true in the response body",
+									"pm.test(\"Response body contains 'success' property with value true\", function () {",
+									"    pm.expect(responseBody).to.have.property('success', true);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": \"{{customer_id}}\",\n    \"record_number\": \"{{record_number}}\",\n    \"description\": \"{{description}}\",\n    \"issue_date\": \"{{issue_date}}\",\n    \"due_date\": \"{{due_date}}\",\n    \"total_amount\": {{total_amount}},\n    \"previous_payment_amount\": {{previous_payment_amount}},\n    \"interest_rate\": {{interest_rate}},\n    \"interest_rate_type\": \"{{interest_rate_type}}\",\n    \"is_user_uploaded_record\": {{is_user_uploaded_record}},\n    \"business_id\": \"{{business_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record",
+							"host": [
+								"https://dev2.ara-pay.com/development/ara/record/api/v2"
+							],
+							"path": [
+								"payee",
+								"record"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
