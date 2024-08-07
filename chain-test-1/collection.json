@@ -1,0 +1,641 @@
+{
+	"info": {
+		"_postman_id": "d135fa6d-0c56-468b-98f1-718a8f974501",
+		"name": "newman chain 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13782757",
+		"_collection_link": "https://ara-research-tech.postman.co/workspace/Ara~8b87c58a-d3a5-41e0-81ed-2e89c33cb852/collection/13782757-d135fa6d-0c56-468b-98f1-718a8f974501?action=share&source=collection_link&creator=13782757"
+	},
+	"item": [
+		{
+			"name": "Chain tests",
+			"item": [
+				{
+					"name": "Create Draft Record",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"customer_id\", pm.iterationData.get(\"customer_id\"));",
+									"pm.variables.set(\"record_number\", pm.iterationData.get(\"record_number\"));",
+									"pm.variables.set(\"description\", pm.iterationData.get(\"description\"));",
+									"pm.variables.set(\"issue_date\", pm.iterationData.get(\"issue_date\"));",
+									"pm.variables.set(\"due_date\", pm.iterationData.get(\"due_date\"));",
+									"pm.variables.set(\"total_amount\", pm.iterationData.get(\"total_amount\"));",
+									"pm.variables.set(\"previous_payment_amount\", pm.iterationData.get(\"previous_payment_amount\"));",
+									"pm.variables.set(\"interest_rate\", pm.iterationData.get(\"interest_rate\"));",
+									"pm.variables.set(\"interest_rate_type\", pm.iterationData.get(\"interest_rate_type\"));",
+									"pm.variables.set(\"is_user_uploaded_record\", pm.iterationData.get(\"is_user_uploaded_record\"));",
+									"pm.variables.set(\"business_id\", pm.iterationData.get(\"business_id\"));",
+									"pm.variables.set(\"expectedStatus\", pm.iterationData.get(\"expectedStatus\"));",
+									"pm.variables.set(\"success\", pm.iterationData.get(\"success\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Payee creates a draft record\", function () {",
+									"    const responseBody = pm.response.json();",
+									"    const expectedStatus = pm.variables.get(\"expectedStatus\");",
+									"    const success = pm.variables.get(\"success\");",
+									"",
+									"    pm.test(`Verify the expected status code to be ${expectedStatus}`, function () {",
+									"        pm.response.to.have.status(expectedStatus);",
+									"    });",
+									"",
+									"    pm.test(`Verify success to be ${success}`, function () {",
+									"        pm.expect(responseBody.success).to.eql(success);",
+									"    });",
+									"",
+									"    // Check the response body contains correct data for the created customer",
+									"    pm.test(\"Response body contains correct data for the created customer\", function () {",
+									"        const issueDate = pm.variables.get(\"issue_date\");",
+									"        const dueDate = pm.variables.get(\"due_date\");",
+									"",
+									"        pm.expect(responseBody.success).to.eql(true);",
+									"        pm.expect(responseBody.data.record.customer_id).to.eql(pm.variables.get(\"customer_id\"));",
+									"        pm.expect(responseBody.data.record.record_number).to.not.be.empty;",
+									"        pm.expect(responseBody.data.record.description).to.eql(pm.variables.get(\"description\"));",
+									"        pm.expect(responseBody.data.record.date.issue_date).to.eql(issueDate);",
+									"        pm.expect(responseBody.data.record.date.due_date).to.eql(dueDate);",
+									"        pm.expect(responseBody.data.record.amount.total_amount).to.eql(pm.variables.get(\"total_amount\"));",
+									"        pm.expect(responseBody.data.record.amount.previous_payment_amount).to.eql(pm.variables.get(\"previous_payment_amount\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate).to.eql(pm.variables.get(\"interest_rate\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate_type).to.eql(pm.variables.get(\"interest_rate_type\"));",
+									"        pm.expect(responseBody.data.record.business_id).to.eql(pm.variables.get(\"business_id\"));",
+									"    });",
+									"",
+									"    // Check if the new record ID exists and save it to variables",
+									"    pm.test(\"New record ID exists\", function () {",
+									"        pm.expect(responseBody.data.record.id).to.be.a('string');",
+									"        pm.expect(responseBody.data.record.id).to.not.be.empty;",
+									"        pm.variables.set(\"record_id\", responseBody.data.record.id);",
+									"        console.log(`Record ID: ${responseBody.data.record.id}`);",
+									"    });",
+									"",
+									"    // Log the variables for debugging",
+									"    console.log(\"Logging entire response:\");",
+									"    console.log(responseBody);",
+									"    console.log(\"-----------------------------------------------------------------------------------------\")",
+									"    console.log(\"Logging entire request body:\");",
+									"    console.log(pm.request.body.raw);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": \"{{customer_id}}\",\n    \"record_number\": \"{{record_number}}\",\n    \"description\": \"{{description}}\",\n    \"issue_date\": \"{{issue_date}}\",\n    \"due_date\": \"{{due_date}}\",\n    \"total_amount\": {{total_amount}},\n    \"previous_payment_amount\": {{previous_payment_amount}},\n    \"interest_rate\": {{interest_rate}},\n    \"interest_rate_type\": \"{{interest_rate_type}}\",\n    \"is_user_uploaded_record\": {{is_user_uploaded_record}},\n    \"business_id\": \"{{business_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record",
+							"protocol": "https",
+							"host": [
+								"dev2",
+								"ara-pay",
+								"com"
+							],
+							"path": [
+								"development",
+								"ara",
+								"record",
+								"api",
+								"v2",
+								"payee",
+								"record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Draft Record",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"customer_id\", pm.iterationData.get(\"customer_id\"));",
+									"pm.variables.set(\"record_number\", pm.iterationData.get(\"record_number\"));",
+									"pm.variables.set(\"description\", pm.iterationData.get(\"updatedDescription\"));",
+									"pm.variables.set(\"issue_date\", pm.iterationData.get(\"issue_date\"));",
+									"pm.variables.set(\"due_date\", pm.iterationData.get(\"due_date\"));",
+									"pm.variables.set(\"total_amount\", pm.iterationData.get(\"total_amount\"));",
+									"pm.variables.set(\"previous_payment_amount\", pm.iterationData.get(\"previous_payment_amount\"));",
+									"pm.variables.set(\"interest_rate\", pm.iterationData.get(\"interest_rate\"));",
+									"pm.variables.set(\"interest_rate_type\", pm.iterationData.get(\"interest_rate_type\"));",
+									"pm.variables.set(\"is_user_uploaded_record\", pm.iterationData.get(\"is_user_uploaded_record\"));",
+									"pm.variables.set(\"business_id\", pm.iterationData.get(\"business_id\"));",
+									"pm.variables.set(\"expectedStatus\", pm.iterationData.get(\"expectedStatus\"));",
+									"pm.variables.set(\"success\", pm.iterationData.get(\"success\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Payee updates a draft record\", function () {",
+									"    const responseBody = pm.response.json();",
+									"    const expectedStatus = pm.variables.get(\"expectedStatus\");",
+									"    const success = pm.variables.get(\"success\");",
+									"",
+									"    pm.test(`Verify the expected status code to be ${expectedStatus}`, function () {",
+									"        pm.response.to.have.status(expectedStatus);",
+									"    });",
+									"",
+									"    pm.test(`Verify success to be ${success}`, function () {",
+									"        pm.expect(responseBody.success).to.eql(success);",
+									"    });",
+									"",
+									"    // Check the response body contains correct data for the created customer",
+									"    pm.test(\"Response body contains correct data for the created customer\", function () {",
+									"        const issueDate = pm.variables.get(\"issue_date\");",
+									"        const dueDate = pm.variables.get(\"due_date\");",
+									"",
+									"        pm.expect(responseBody.success).to.eql(true);",
+									"        pm.expect(responseBody.data.record.customer_id).to.eql(pm.variables.get(\"customer_id\"));",
+									"        pm.expect(responseBody.data.record.record_number).to.not.be.empty;",
+									"        pm.expect(responseBody.data.record.description).to.eql(pm.variables.get(\"updatedDescription\"));",
+									"        pm.expect(responseBody.data.record.date.issue_date).to.eql(issueDate);",
+									"        pm.expect(responseBody.data.record.date.due_date).to.eql(dueDate);",
+									"        pm.expect(responseBody.data.record.amount.total_amount).to.eql(pm.variables.get(\"total_amount\"));",
+									"        pm.expect(responseBody.data.record.amount.previous_payment_amount).to.eql(pm.variables.get(\"previous_payment_amount\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate).to.eql(pm.variables.get(\"interest_rate\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate_type).to.eql(pm.variables.get(\"interest_rate_type\"));",
+									"        pm.expect(responseBody.data.record.business_id).to.eql(pm.variables.get(\"business_id\"));",
+									"    });",
+									"",
+									"    // Log the variables for debugging",
+									"    console.log(\"Logging entire response:\");",
+									"    console.log(responseBody);",
+									"    console.log(\"-----------------------------------------------------------------------------------------\")",
+									"    console.log(\"Logging entire request body:\");",
+									"    console.log(pm.request.body.raw);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": \"{{customer_id}}\",\n    \"record_number\": \"{{record_number}}\",\n    \"description\": \"{{updatedDescription}}\",\n    \"issue_date\": \"{{issue_date}}\",\n    \"due_date\": \"{{due_date}}\",\n    \"total_amount\": {{total_amount}},\n    \"previous_payment_amount\": {{previous_payment_amount}},\n    \"interest_rate\": {{interest_rate}},\n    \"interest_rate_type\": \"{{interest_rate_type}}\",\n    \"is_user_uploaded_record\": {{is_user_uploaded_record}},\n    \"business_id\": \"{{business_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record/:recordId",
+							"protocol": "https",
+							"host": [
+								"dev2",
+								"ara-pay",
+								"com"
+							],
+							"path": [
+								"development",
+								"ara",
+								"record",
+								"api",
+								"v2",
+								"payee",
+								"record",
+								":recordId"
+							],
+							"variable": [
+								{
+									"key": "recordId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Convert Draft to Active Record",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"record_id\", pm.iterationData.get(\"record_id\"));",
+									"pm.variables.set(\"business_id\", pm.iterationData.get(\"business_id\"));",
+									"pm.variables.set(\"expectedStatus\", pm.iterationData.get(\"expectedStatus\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Payee converts a draft to an active record\", function () {",
+									"    // Parse the JSON response body",
+									"    var responseBody = pm.response.json();",
+									"    const expectedStatus = pm.variables.get(\"expectedStatus\");",
+									"    const success = pm.variables.get(\"success\");",
+									"",
+									"// Check if the status code is 200",
+									"    pm.test(`Verify the expected status code to be ${expectedStatus}`, function () {",
+									"        pm.response.to.have.status(expectedStatus);",
+									"    });",
+									"",
+									"    // Check if success is true",
+									"    pm.test(\"Verify success to be true\", function () {",
+									"        pm.expect(responseBody.success).to.be.true;",
+									"    });",
+									"",
+									"     // Check the message is \"success\"",
+									"    pm.test(\"Verify message is 'success'\", function () {",
+									"        pm.expect(responseBody.data.message).to.equal(\"success\");",
+									"    });",
+									"",
+									"    // Log the variables for debugging",
+									"    console.log(\"Logging entire response:\");",
+									"    console.log(responseBody);",
+									"    console.log(\"-----------------------------------------------------------------------------------------\")",
+									"    console.log(\"Logging entire request body:\");",
+									"    console.log(pm.request.body.raw);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"record_ids\": [\"{{record_id}}\"],\n    \"business_id\": \"{{business_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record/convert",
+							"protocol": "https",
+							"host": [
+								"dev2",
+								"ara-pay",
+								"com"
+							],
+							"path": [
+								"development",
+								"ara",
+								"record",
+								"api",
+								"v2",
+								"payee",
+								"record",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Record",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"customer_id\", pm.iterationData.get(\"customer_id\"));",
+									"pm.variables.set(\"record_number\", pm.iterationData.get(\"record_number\"));",
+									"pm.variables.set(\"description\", pm.iterationData.get(\"updatedDescription\"));",
+									"pm.variables.set(\"issue_date\", pm.iterationData.get(\"issue_date\"));",
+									"pm.variables.set(\"due_date\", pm.iterationData.get(\"due_date\"));",
+									"pm.variables.set(\"total_amount\", pm.iterationData.get(\"total_amount\"));",
+									"pm.variables.set(\"previous_payment_amount\", pm.iterationData.get(\"previous_payment_amount\"));",
+									"pm.variables.set(\"interest_rate\", pm.iterationData.get(\"interest_rate\"));",
+									"pm.variables.set(\"interest_rate_type\", pm.iterationData.get(\"interest_rate_type\"));",
+									"pm.variables.set(\"is_user_uploaded_record\", pm.iterationData.get(\"is_user_uploaded_record\"));",
+									"pm.variables.set(\"business_id\", pm.iterationData.get(\"business_id\"));",
+									"pm.variables.set(\"expectedStatus\", pm.iterationData.get(\"expectedStatus\"));",
+									"pm.variables.set(\"success\", pm.iterationData.get(\"success\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Payee gets one record\", function () {",
+									"    const responseBody = pm.response.json();",
+									"    const expectedStatus = pm.variables.get(\"expectedStatus\");",
+									"    const success = pm.variables.get(\"success\");",
+									"",
+									"    pm.test(`Verify the expected status code to be ${expectedStatus}`, function () {",
+									"        pm.response.to.have.status(expectedStatus);",
+									"    });",
+									"",
+									"    pm.test(`Verify success to be ${success}`, function () {",
+									"        pm.expect(responseBody.success).to.eql(success);",
+									"    });",
+									"",
+									"    // Check the response body contains correct data for the created customer",
+									"    pm.test(\"Response body contains correct data for the created customer\", function () {",
+									"        const issueDate = pm.variables.get(\"issue_date\");",
+									"        const dueDate = pm.variables.get(\"due_date\");",
+									"",
+									"        pm.expect(responseBody.success).to.eql(true);",
+									"        pm.expect(responseBody.data.record.customer_id).to.eql(pm.variables.get(\"customer_id\"));",
+									"        pm.expect(responseBody.data.record.record_number).to.not.be.empty;",
+									"        pm.expect(responseBody.data.record.description).to.eql(pm.variables.get(\"updatedDescription\"));",
+									"        pm.expect(responseBody.data.record.date.issue_date).to.eql(issueDate);",
+									"        pm.expect(responseBody.data.record.date.due_date).to.eql(dueDate);",
+									"        pm.expect(responseBody.data.record.amount.total_amount).to.eql(pm.variables.get(\"total_amount\"));",
+									"        pm.expect(responseBody.data.record.amount.previous_payment_amount).to.eql(pm.variables.get(\"previous_payment_amount\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate).to.eql(pm.variables.get(\"interest_rate\"));",
+									"        pm.expect(responseBody.data.record.charges.interest_rate_config.interest_rate_type).to.eql(pm.variables.get(\"interest_rate_type\"));",
+									"        pm.expect(responseBody.data.record.business_id).to.eql(pm.variables.get(\"business_id\"));",
+									"    });",
+									"",
+									"    // Log the variables for debugging",
+									"    console.log(\"Logging entire response:\");",
+									"    console.log(responseBody);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record/get-one/:businessId/:recordId",
+							"protocol": "https",
+							"host": [
+								"dev2",
+								"ara-pay",
+								"com"
+							],
+							"path": [
+								"development",
+								"ara",
+								"record",
+								"api",
+								"v2",
+								"payee",
+								"record",
+								"get-one",
+								":businessId",
+								":recordId"
+							],
+							"variable": [
+								{
+									"key": "businessId",
+									"value": ""
+								},
+								{
+									"key": "recordId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Records",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Payee gets all records\", function () {",
+									"    const responseBody = pm.response.json();",
+									"    const expectedStatus = pm.variables.get(\"expectedStatus\");",
+									"    const success = pm.variables.get(\"success\");",
+									"",
+									"    pm.test(`Verify the expected status code to be ${expectedStatus}`, function () {",
+									"        pm.response.to.have.status(expectedStatus);",
+									"    });",
+									"",
+									"    pm.test(`Verify success to be ${success}`, function () {",
+									"        pm.expect(responseBody.success).to.eql(success);",
+									"    });",
+									"",
+									"    // Check the response body contains correct data for the created customer",
+									"    pm.test(\"Response body contains correct data for the created customer\", function () {",
+									"        const issueDate = pm.variables.get(\"issue_date\");",
+									"        const dueDate = pm.variables.get(\"due_date\");",
+									"",
+									"        pm.expect(responseBody.data.records[0].customer_id).to.eql(pm.variables.get(\"customer_id\"));",
+									"        pm.expect(responseBody.data.records[0].record_number).to.not.be.empty;",
+									"        pm.expect(responseBody.data.records[0].description).to.eql(pm.variables.get(\"updatedDescription\"));",
+									"        pm.expect(responseBody.data.records[0].date.issue_date).to.eql(issueDate);",
+									"        pm.expect(responseBody.data.records[0].date.due_date).to.eql(dueDate);",
+									"        pm.expect(responseBody.data.records[0].amount.total_amount).to.eql(pm.variables.get(\"total_amount\"));",
+									"        pm.expect(responseBody.data.records[0].amount.previous_payment_amount).to.eql(pm.variables.get(\"previous_payment_amount\"));",
+									"        pm.expect(responseBody.data.records[0].charges.interest_rate_config.interest_rate).to.eql(pm.variables.get(\"interest_rate\"));",
+									"        pm.expect(responseBody.data.records[0].charges.interest_rate_config.interest_rate_type).to.eql(pm.variables.get(\"interest_rate_type\"));",
+									"        pm.expect(responseBody.data.records[0].business_id).to.eql(pm.variables.get(\"business_id\"));",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"customer_id\", pm.iterationData.get(\"customer_id\"));",
+									"pm.variables.set(\"record_number\", pm.iterationData.get(\"record_number\"));",
+									"pm.variables.set(\"description\", pm.iterationData.get(\"updatedDescription\"));",
+									"pm.variables.set(\"issue_date\", pm.iterationData.get(\"issue_date\"));",
+									"pm.variables.set(\"due_date\", pm.iterationData.get(\"due_date\"));",
+									"pm.variables.set(\"total_amount\", pm.iterationData.get(\"total_amount\"));",
+									"pm.variables.set(\"previous_payment_amount\", pm.iterationData.get(\"previous_payment_amount\"));",
+									"pm.variables.set(\"interest_rate\", pm.iterationData.get(\"interest_rate\"));",
+									"pm.variables.set(\"interest_rate_type\", pm.iterationData.get(\"interest_rate_type\"));",
+									"pm.variables.set(\"is_user_uploaded_record\", pm.iterationData.get(\"is_user_uploaded_record\"));",
+									"pm.variables.set(\"business_id\", pm.iterationData.get(\"business_id\"));",
+									"pm.variables.set(\"expectedStatus\", pm.iterationData.get(\"expectedStatus\"));",
+									"pm.variables.set(\"success\", pm.iterationData.get(\"success\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev2.ara-pay.com/development/ara/record/api/v2/payee/record/:businessId?sort=%7B%22date.converted_at%22:-1%7D&status=active",
+							"protocol": "https",
+							"host": [
+								"dev2",
+								"ara-pay",
+								"com"
+							],
+							"path": [
+								"development",
+								"ara",
+								"record",
+								"api",
+								"v2",
+								"payee",
+								"record",
+								":businessId"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "%7B%22date.converted_at%22:-1%7D"
+								},
+								{
+									"key": "status",
+									"value": "active"
+								}
+							],
+							"variable": [
+								{
+									"key": "businessId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfaWQiOiI2NjY2NzE2ODJjOTZjN2RiMTNlZDkxZDgiLCJpc3N1ZWRCeSI6InRlY2hAaW50cmluc2lrLmx5In0sImlhdCI6MTcxOTI3OTI1NTkwNCwiZXhwIjoxNzE5MjgxODQ3OTA0fQ.WSlwpsi9IfA_eU8XzFT1DksrEj-caGQkogzjl8zlgXA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

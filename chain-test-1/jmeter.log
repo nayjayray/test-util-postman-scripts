@@ -1,0 +1,216 @@
+2024-07-23 15:17:14,816 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2024-07-23 15:17:14,964 INFO o.a.j.JMeter: Loading user properties from: /Users/mark/apache-jmeter-5.6.3/bin/user.properties
+2024-07-23 15:17:14,965 INFO o.a.j.JMeter: Loading system properties from: /Users/mark/apache-jmeter-5.6.3/bin/system.properties
+2024-07-23 15:17:14,982 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2024-07-23 15:17:14,982 INFO o.a.j.JMeter: Version 5.6.3
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: java.version=1.8.0_371
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: os.name=Mac OS X
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: os.arch=x86_64
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: os.version=13.4.1
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: file.encoding=UTF-8
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: java.awt.headless=null
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: Max memory     =1073741824
+2024-07-23 15:17:14,983 INFO o.a.j.JMeter: Available Processors =8
+2024-07-23 15:17:14,990 INFO o.a.j.JMeter: Default Locale=English (EN)
+2024-07-23 15:17:14,991 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2024-07-23 15:17:14,991 INFO o.a.j.JMeter: JMeterHome=/Users/mark/apache-jmeter-5.6.3
+2024-07-23 15:17:14,991 INFO o.a.j.JMeter: user.dir  =/Users/mark/github/test-util-postman-scripts/chain-test-1
+2024-07-23 15:17:14,993 INFO o.a.j.JMeter: PWD       =/Users/mark/github/test-util-postman-scripts/chain-test-1
+2024-07-23 15:17:20,015 INFO o.a.j.JMeter: IP: 10.6.21.39 Name: Marks-MacBook-Pro-2.local FullName: 10.6.21.39
+2024-07-23 15:17:20,061 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2024-07-23 15:17:20,946 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: laf:com.apple.laf.AquaLookAndFeel
+2024-07-23 15:18:06,168 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-07-23 15:18:06,170 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-07-23 15:18:06,170 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-07-23 15:18:06,170 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-07-23 15:18:06,170 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2024-07-23 15:18:06,170 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2024-07-23 15:18:11,215 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2024-07-23 15:18:11,216 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2024-07-23 15:18:49,804 INFO o.a.j.f.LogFunction: AWT-EventQueue-0  :  hello world
+2024-07-23 15:21:22,041 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2024-07-23 15:21:22,043 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2024-07-23 15:21:22,043 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2024-07-23 15:21:22,044 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2024-07-23 15:22:10,695 INFO o.a.j.s.FileServer: Default base='/Users/mark/github/test-util-postman-scripts/chain-test-1'
+2024-07-23 15:22:10,707 INFO o.a.j.s.FileServer: Set new base='/Users/mark/apache-jmeter-5.6.3/bin/ara-test-plan'
+2024-07-23 15:22:10,992 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2024-07-23 15:22:11,293 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2024-07-23 15:22:11,297 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2024-07-23 15:22:21,440 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:22:21,447 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:22:21,447 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:22:21,459 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:22:21,473 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:22:21,676 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:22:21,686 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:22:21,688 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:22:21,690 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:22:21,744 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:22:21,745 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:22:21,760 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:22:21,806 INFO o.a.j.f.LogFunction: Thread Group 1-1  :  hello world
+2024-07-23 15:22:21,975 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:22:21,976 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:22:21,979 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:22:22,033 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:23:21,421 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:23:21,426 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:23:21,445 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:23:21,457 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:23:21,621 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:23:21,627 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:23:21,628 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:23:21,630 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:23:21,656 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:23:21,665 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:23:21,668 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:23:21,676 INFO o.a.j.f.LogFunction: Thread Group 1-1  :  hello world
+2024-07-23 15:23:22,026 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:23:22,027 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:23:22,031 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:23:22,037 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:26:48,414 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:26:48,420 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:26:48,430 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:26:48,431 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:26:48,434 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:26:48,658 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:26:48,659 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:26:48,659 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:26:48,660 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:26:48,666 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:26:48,666 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:26:48,678 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:26:48,703 INFO o.a.j.f.LogFunction: Thread Group 1-1  :  hello world
+2024-07-23 15:26:49,127 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:26:49,128 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:26:49,129 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:26:49,135 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:27:31,867 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:27:31,871 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:27:31,873 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:27:31,873 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:27:31,873 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:27:31,976 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:27:31,978 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:27:31,979 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:27:31,980 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:27:31,986 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:27:31,986 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:27:31,988 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:27:31,989 INFO o.a.j.f.LogFunction: Thread Group 1-1  :  hello world
+2024-07-23 15:27:32,456 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:27:32,456 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:27:32,457 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:27:32,457 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:48:58,749 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:48:58,755 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:48:58,757 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:48:58,757 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:48:58,758 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:48:58,758 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:48:59,009 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:48:59,020 INFO o.a.j.e.StandardJMeterEngine: Starting 5 threads for group Thread Group.
+2024-07-23 15:48:59,022 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:48:59,025 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=5 ramp-up=1 delayedStart=false
+2024-07-23 15:48:59,056 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:48:59,056 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:48:59,053 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:48:59,075 INFO o.a.j.f.LogFunction: Thread Group 1-1  :  hello world
+2024-07-23 15:48:59,238 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2024-07-23 15:48:59,240 INFO o.a.j.f.LogFunction: Thread Group 1-2  :  hello world
+2024-07-23 15:48:59,436 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2024-07-23 15:48:59,440 INFO o.a.j.f.LogFunction: Thread Group 1-3  :  hello world
+2024-07-23 15:48:59,632 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2024-07-23 15:48:59,635 INFO o.a.j.f.LogFunction: Thread Group 1-4  :  hello world
+2024-07-23 15:48:59,761 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:48:59,763 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:48:59,840 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2024-07-23 15:48:59,842 INFO o.a.j.f.LogFunction: Thread Group 1-5  :  hello world
+2024-07-23 15:49:00,019 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2024-07-23 15:49:00,020 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2024-07-23 15:49:00,025 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2024-07-23 15:49:00,025 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2024-07-23 15:49:00,319 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2024-07-23 15:49:00,319 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2024-07-23 15:49:00,687 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2024-07-23 15:49:00,687 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2024-07-23 15:49:00,687 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:49:00,690 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:51:33,043 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:51:33,058 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:51:33,066 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:51:33,071 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:51:33,292 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:51:33,299 INFO o.a.j.e.StandardJMeterEngine: Starting 5 threads for group Thread Group.
+2024-07-23 15:51:33,300 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:51:33,301 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=5 ramp-up=1 delayedStart=false
+2024-07-23 15:51:33,335 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:51:33,337 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:51:33,336 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:51:33,519 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2024-07-23 15:51:33,704 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:51:33,705 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:51:33,711 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2024-07-23 15:51:33,785 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2024-07-23 15:51:33,785 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2024-07-23 15:51:33,900 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2024-07-23 15:51:33,900 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2024-07-23 15:51:33,908 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2024-07-23 15:51:34,041 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2024-07-23 15:51:34,041 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2024-07-23 15:51:34,109 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2024-07-23 15:51:34,441 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2024-07-23 15:51:34,441 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2024-07-23 15:51:34,442 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:51:34,452 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:54:25,033 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:54:25,044 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:54:25,047 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:54:25,047 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:54:25,048 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:54:25,253 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:54:25,264 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:54:25,265 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:54:25,269 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:54:25,292 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:54:25,292 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:54:25,301 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:54:25,854 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:54:25,854 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:54:25,855 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:54:25,858 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:54:35,019 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:54:35,020 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:54:35,023 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:54:35,024 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:54:35,024 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:54:35,195 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:54:35,202 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:54:35,203 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:54:35,205 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:54:35,232 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:54:35,233 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:54:35,236 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:54:35,781 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:54:35,783 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:54:35,787 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:54:35,802 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-07-23 15:56:57,812 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-07-23 15:56:57,822 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-07-23 15:56:57,832 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:56:57,832 INFO o.a.j.p.j.s.JavaSampler: Created class: org.apache.jmeter.protocol.java.test.JavaTest. Uses tearDownTest: 
+2024-07-23 15:56:57,833 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-07-23 15:56:57,942 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2024-07-23 15:56:57,951 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2024-07-23 15:56:57,952 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-07-23 15:56:57,953 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-07-23 15:56:57,960 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-07-23 15:56:57,960 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-07-23 15:56:57,963 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2024-07-23 15:56:58,480 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2024-07-23 15:56:58,481 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2024-07-23 15:56:58,481 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-07-23 15:56:58,484 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
